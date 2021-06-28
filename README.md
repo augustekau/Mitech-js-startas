@@ -1,2 +1,1 @@
-# Mitech-js-startas
- Javascript implementacija Mitech sablonui
+2020-06-28 Paskaitos kodas

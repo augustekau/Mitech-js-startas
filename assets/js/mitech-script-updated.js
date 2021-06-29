@@ -1,6 +1,5 @@
-$(document).ready(function() {
-
-  $('.slick-slider').slick({
+$(document).ready(function () {
+  $(".slick-slider").slick({
     infinite: true,
     speed: 300,
     slidesToShow: 3,
@@ -8,15 +7,14 @@ $(document).ready(function() {
     variableWidth: true,
     autoplay: true,
     autoplaySpeed: 800,
-    });
+  });
 
-  $('.autoplay').slick({
+  $(".autoplay").slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
   });
-
 });
 
 //funkcija();
@@ -25,16 +23,33 @@ $(document).ready(function() {
   alert('Labas lietuva!');
 }*/
 
+document.getElementById("atidarymoNuoroda").onclick = function () {
+  var langas = document.getElementById("offcanvasAtidarymas");
 
-document.getElementById('atidarymoNuoroda').onclick = function() {
-
-  var langas = document.getElementById('offcanvasAtidarymas');
-  
   //Funkcija contains grazina reiksme true arba false
-  if( langas.classList.contains('open') == false ) {
-    langas.classList.add('open');   
+  if (langas.classList.contains("open") == false) {
+    langas.classList.add("open");
   } else {
-    langas.classList.remove('open');
+    langas.classList.remove("open");
   }
-
 };
+
+////////////////////////////
+// 1. BUDAS
+
+document.getElementById("sutinku").onclick = function () {
+  var slapukas = document.getElementById("slapukai");
+  slapukas.classList.add("closed");
+};
+
+////////////////////////////
+// 2. BUDAS
+
+// reikia pakeisti pirma eilute pridedant eventListenes, kazkodel ivedus tik f-jos name neveiveikia
+
+// document.getElementById("sutinku").addEventListener("click", eventas);
+
+// function eventas() {
+//   var slapukas = document.getElementById("slapukai");
+//   slapukas.classList.add("closed");
+// }

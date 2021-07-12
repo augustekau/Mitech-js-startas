@@ -109,6 +109,7 @@ $("#getButton").click(function () {
 
 // //////////////////////////////////////////////////////////////////////////////
 // 12.07.2021 COOKIES
+
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
@@ -146,4 +147,10 @@ jQuery(document).ready(function () {
     jQuery("#slapukai").slideDown(500);
     return false;
   });
+});
+
+// UZDUOTIS loading page
+
+jQuery(window).load(function () {
+  jQuery(".loaded").addClass("hide");
 });

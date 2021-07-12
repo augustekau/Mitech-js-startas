@@ -57,17 +57,6 @@ document.getElementById("atidarymoNuoroda").onclick = function () {
 ////////////////////////////////////////////////////////////////
 // 09.07.2021 padaryti, kad atsirastu/dingtu slapukai paspaudziant mygtukus
 
-jQuery(document).ready(function () {
-  jQuery("#sutinku").on("click", function () {
-    jQuery(this).parent().slideUp(500);
-  });
-
-  jQuery("#rodytiBaneri").on("click", function () {
-    jQuery("#slapukai").slideDown(500);
-    return false;
-  });
-});
-
 // text getting smaller
 
 $("#getButton").click(function (e) {
@@ -116,4 +105,45 @@ $("#getButton").click(function () {
     },
     1000
   );
+});
+
+// //////////////////////////////////////////////////////////////////////////////
+// 12.07.2021 COOKIES
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+// if (getCookie("slapukai") == "pazymeta") {
+//   jQuert("#stapukai").hide();
+// }
+// taip pat galima naudoti funkcija remove()
+
+jQuery(document).ready(function () {
+  jQuery("#sutinku").on("click", function () {
+    jQuery(this).parent().slideUp(500);
+    setCookie("slapukai", "pazymeta", 10);
+  });
+
+  jQuery("#rodytiBaneri").on("click", function () {
+    jQuery("#slapukai").slideDown(500);
+    return false;
+  });
 });

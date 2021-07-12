@@ -132,7 +132,7 @@ function getCookie(cname) {
 }
 
 if (getCookie("slapukai") == "pazymeta") {
-  jQuert("#stapukai").hide();
+  jQuert("#slapukai").hide();
 }
 // taip pat galima naudoti funkcija remove()
 

@@ -131,9 +131,9 @@ function getCookie(cname) {
   return "";
 }
 
-// if (getCookie("slapukai") == "pazymeta") {
-//   jQuert("#stapukai").hide();
-// }
+if (getCookie("slapukai") == "pazymeta") {
+  jQuert("#stapukai").hide();
+}
 // taip pat galima naudoti funkcija remove()
 
 jQuery(document).ready(function () {

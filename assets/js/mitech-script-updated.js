@@ -37,10 +37,10 @@ document.getElementById("atidarymoNuoroda").onclick = function () {
 ////////////////////////////
 // 1. BUDAS
 
-document.getElementById("sutinku").onclick = function () {
-  var slapukas = document.getElementById("slapukai");
-  slapukas.classList.add("closed");
-};
+// document.getElementById("sutinku").onclick = function () {
+//   var slapukas = document.getElementById("slapukai");
+//   slapukas.classList.add("closed");
+// };
 
 ////////////////////////////
 // 2. BUDAS
@@ -53,3 +53,67 @@ document.getElementById("sutinku").onclick = function () {
 //   var slapukas = document.getElementById("slapukai");
 //   slapukas.classList.add("closed");
 // }
+
+////////////////////////////////////////////////////////////////
+// 09.07.2021 padaryti, kad atsirastu/dingtu slapukai paspaudziant mygtukus
+
+jQuery(document).ready(function () {
+  jQuery("#sutinku").on("click", function () {
+    jQuery(this).parent().slideUp(500);
+  });
+
+  jQuery("#rodytiBaneri").on("click", function () {
+    jQuery("#slapukai").slideDown(500);
+    return false;
+  });
+});
+
+// text getting smaller
+
+$("#getButton").click(function (e) {
+  e.preventDefault(); //kad nesokinetu nuoroda
+  $("#text").animate(
+    {
+      opacity: 0.2,
+      "font-size": "20px",
+      "font-weight": "300",
+    },
+    1000
+  );
+});
+
+$("#getButton").click(function () {
+  $(".redText").animate(
+    {
+      "font-size": "50px",
+    },
+    1000
+  );
+});
+
+//photo disappears
+
+$("#getButton").click(function () {
+  $(".infotechno-img-two").animate(
+    //imti ne pati paveiksliuka, nes jis ne absolute, o diva, kuriame jis yra
+    {
+      opacity: 0.2,
+      bottom: "900",
+      right: "500",
+    },
+    1000
+  );
+});
+
+$("#getButton").click(function () {
+  $(".infotechno-img-one").animate(
+    //imti ne pati paveiksliuka, nes jis ne absolute, o diva, kuriame jis yra
+    {
+      opacity: 0.2,
+      bottom: "900",
+      right: "500",
+      //borderRadius:30,
+    },
+    1000
+  );
+});

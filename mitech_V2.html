@@ -24,6 +24,8 @@
       rel="stylesheet"
       href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
     />
+<!-- fancyBox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <!-- mano css -->
     <link rel="stylesheet" href="assets/css/mitech-en.css" />
     <link rel="stylesheet" href="assets/css/Carousel-styles.css" />
@@ -65,15 +67,15 @@
               "
             >
               <h5 class="blue-heading text-primary">IT Design & Consulting</h5>
-              <h1>
+              <h1 id="text">
                 Facilitate All <br />
                 Local IT-related Service Providers
               </h1>
-              <p class="mt-4 mb-5">
+              <p class="mt-4 mb-5 redText">
                 Highly Tailored IT Design, Management & Support Services.
               </p>
               <div class="hero-btn mt-5">
-                <a href="#" class="ht-btn"> Get details </a>
+                <a href="#" class="ht-btn" id="getButton"> Get details </a>
               </div>
             </div>
           </div>
@@ -86,7 +88,7 @@
               />
             </div>
             <div class="infotechno-img-two">
-              <img class="img-fluid" src="assets/img/hero-01.png" alt="" />
+              <img class="img-fluid boy" src="assets/img/hero-01.png" alt="" />
             </div>
           </div>
         </div>
@@ -571,7 +573,9 @@
                       solutions that best fits your demand and nail it.
                     </p>
                     <div class="hero-btn mt-5">
-                      <a href="#" class="ht-btn"> Join us now </a>
+                      <a href="#" class="ht-btn" id="rodytiBaneri">
+                        Join us now
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -710,6 +714,41 @@
         </div>
       </div>
     </div>
+    <!-- 10.07.2021 uzduotis -->
+    <!-- Video wrapper START -->
+<div class="infotechno-video-bg">
+   <div class="container">
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+          <div class="video-content">
+            <div class="video-text">
+              <h2>Share the joy of achieving glorious moments
+              </br>
+              & climbing up the top.
+              </h2>
+            </div>     
+            <div class="viewo-text-wrap">
+              <div class="video-popup infotech-video-box">
+                <a href="https://www.youtube.com/watch?v=9No-FiEInLA" data-fancybox="test" class="single-popup-wrap video-link d-flex align-items-center">             
+                  <div class="video-btn">
+                    <button class="click"><i class="las la-caret-right"></i></button>
+                  </div>        
+                  <div class="watch-intro">
+                  Watch video </br>
+                  intro
+                  </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+
+
+   
 
     <div id="slapukai" class="slapukai-container">
       <h2>ŠIOJE SVETAINĖJE NAUDOJAMI SLAPUKAI</h2>
@@ -753,6 +792,10 @@
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
+
+    <!-- fancyBox -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
     <!-- Cia yra 3 -->
     <!--<script src="assets/js/mitech-script.js"></script>-->

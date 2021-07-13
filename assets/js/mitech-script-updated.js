@@ -153,4 +153,52 @@ jQuery(document).ready(function () {
 
 jQuery(window).load(function () {
   jQuery(".loaded").addClass("hide");
+  setTimeout(function () {
+    jQuery(".loaded").hide();
+  }, 500);
+});
+// setTimeout - uzdedame kad loaderis neuzliptu ant turinio, jei jo nepaslepiam, tada neveikia linkai, nieko neina paspausti. uzdedant timeout pasidaro taip, kad mes ta loaderi uz 500s paslepiam ir ji neblokuoja tinklalapio
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 13-07-2021 SCROLLTOP function
+$("#scroll-top").click(function () {
+  $(".arrow-up").animate(
+    //imti ne pati paveiksliuka, nes jis ne absolute, o diva, kuriame jis yra
+    {
+      top: "-30px",
+      opacity: 0.2,
+    },
+    1000,
+    // coming back to initial position after animation
+    function () {
+      $(".arrow-up").css("top", "10px");
+      $(".arrow-up").css("opacity", "1");
+    }
+  );
+});
+
+jQuery(".scroll-top").on("click", function (e) {
+  e.preventDefault();
+  jQuery("html, body").animate({ scrollTop: 0 }, 200);
+});
+// vietoje 200 ms galime rasyti 'fast' arba 'slow'
+
+// kad atsirastu
+jQuery(window).on("scroll", function () {
+  let virsus = jQuery(document).scrollTop();
+  let puslapioAukstis = jQuery(document).height();
+  let langoAukstis = jQuery(window).height();
+  let bendras = virsus + langoAukstis;
+  //console.log(virsus);
+  //console.log(puslapioAukstis);
+  //console.log(langoAukstis);
+  //console.log(bendras);
+  //kai nuscrolinam iki puslapio pabaigos, atsiranda icona, nes pridedama klase .show
+  if (bendras == puslapioAukstis) {
+    jQuery(".scroll-top").addClass("show");
+  }
+  //kai scrollinam i virsu, tada icona pradingsta, nes atimam klase
+  if (bendras < puslapioAukstis - 800) {
+    jQuery(".scroll-top").removeClass("show");
+  }
 });
